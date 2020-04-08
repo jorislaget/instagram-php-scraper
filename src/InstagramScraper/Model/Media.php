@@ -106,6 +106,19 @@ class Media extends AbstractModel
     protected $videoViews = 0;
 
     /**
+     * @var float
+     */
+    protected $videoDuration = 0.0;
+
+    /**
+     * @var array
+     */
+    protected $videoDimensions = [
+        'height' => 0,
+        'width' => 0
+    ];
+
+    /**
      * @var Account
      */
     protected $owner;
@@ -556,6 +569,12 @@ class Media extends AbstractModel
             case 'video_views':
                 $this->videoViews = $value;
                 $this->type = static::TYPE_VIDEO;
+                break;
+            case 'video_duration':
+                $this->videoDuration = $value;
+                break;
+            case 'dimensions':
+                $this->videoDimensions = $value;
                 break;
             case 'videos':
                 $this->videoLowResolutionUrl = $arr[$prop]['low_resolution']['url'];
