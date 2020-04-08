@@ -381,6 +381,22 @@ class Media extends AbstractModel
     }
 
     /**
+     * @return float
+     */
+    public function getVideoDuration()
+    {
+        return $this->videoDuration;
+    }
+
+    /**
+     * @return array
+     */
+    public function getVideDimensions()
+    {
+        return $this->videoDimensions;
+    }
+
+    /**
      * @return int
      */
     public function getOwnerId()
